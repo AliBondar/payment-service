@@ -10,9 +10,15 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class PaymentRequestDto implements Serializable {
+public class PaymentDto implements Serializable {
+
+    Long paymentId;
 
     String status;
 
-    String transaction;
+    String transactionId;
+
+    Long orderId;
+
+    double amount;
 }

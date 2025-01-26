@@ -23,6 +23,10 @@ public class Payment {
 
     String transactionId;
 
+    Long orderId;
+
+    double amount;
+
     private Payment(PaymentBuilder builder) {
         this.transactionId = builder.transactionId;
         this.status = builder.status;
@@ -31,16 +35,26 @@ public class Payment {
     @FieldDefaults(level = AccessLevel.PRIVATE)
     public static class PaymentBuilder {
         String status;
-
         String transactionId;
+        Long orderId;
+        double amount;
 
-        public PaymentBuilder setTransaction(String transactionId) {
+        public PaymentBuilder transactionId(String transactionId) {
             this.transactionId = transactionId;
             return this;
         }
 
-        public PaymentBuilder setStatus(String status) {
+        public PaymentBuilder status(String status) {
             this.status = status;
+            return this;
+        }
+
+        public PaymentBuilder orderId(Long orderId) {
+            this.orderId = orderId;
+            return this;
+        }
+        public PaymentBuilder amount(double amount) {
+            this.amount = amount;
             return this;
         }
 

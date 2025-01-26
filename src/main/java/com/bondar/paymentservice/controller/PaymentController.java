@@ -1,6 +1,6 @@
 package com.bondar.paymentservice.controller;
 
-import com.bondar.paymentservice.dto.PaymentRequestDto;
+import com.bondar.paymentservice.dto.PaymentDto;
 import com.bondar.paymentservice.entity.Payment;
 import com.bondar.paymentservice.service.PaymentService;
 import lombok.AccessLevel;
@@ -26,7 +26,7 @@ public class PaymentController {
     }
 
     @PostMapping("/savePayment")
-    public ResponseEntity<?> savePayment(@RequestBody PaymentRequestDto dto) {
+    public ResponseEntity<?> savePayment(@RequestBody PaymentDto dto) {
         Payment persistedPayment = paymentService.savePayment(dto);
         if (persistedPayment != null) {
             return ResponseEntity.status(HttpStatus.CREATED).body(persistedPayment);
