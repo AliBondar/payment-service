@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 8080
 eureka:
   client:
     register-with-eureka: true
@@ -12,7 +12,7 @@ spring:
   application:
     name: payment-service
   datasource:
-    url: jdbc:h2:file:C:/Users/bondar/H2test/Payment_DB
+    url: jdbc:h2:file:D:/Develope/Java/H2test/Payment_DB
     driver-class-name: org.h2.Driver
     username: sa
     password:

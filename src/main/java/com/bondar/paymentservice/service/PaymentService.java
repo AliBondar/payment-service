@@ -8,4 +8,6 @@ public interface PaymentService {
     Payment savePayment(PaymentDto dto);
 
     String processPayment();
+
+    Payment findPaymentHistoryByOrderId(Long orderId);
 }

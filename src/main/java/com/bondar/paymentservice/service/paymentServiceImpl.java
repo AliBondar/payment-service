@@ -32,10 +32,11 @@ public class paymentServiceImpl implements PaymentService {
         return paymentRepository.saveAndFlush(payment);
     }
 
-
     public String processPayment() {
         return new Random().nextBoolean() ? "success" : "false";
     }
 
-
+    public Payment findPaymentHistoryByOrderId(Long orderId) {
+        return paymentRepository.findPaymentByOrderId(orderId);
+    }
 }
